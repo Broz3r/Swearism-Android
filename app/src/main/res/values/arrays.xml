@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="swears">
+        <item>@string/swear_1</item>
+        <item>@string/swear_2</item>
+        <item>@string/swear_3</item>
+        <item>@string/swear_4</item>
+        <item>@string/swear_5</item>
+        <item>@string/swear_6</item>
+        <item>@string/swear_7</item>
+        <item>@string/swear_8</item>
+        <item>@string/swear_9</item>
+        <item>@string/swear_10</item>
+        <item>@string/swear_11</item>
+        <item>@string/swear_12</item>
+        <item>@string/swear_13</item>
+        <item>@string/swear_14</item>
+        <item>@string/swear_15</item>
+        <item>@string/swear_16</item>
+        <item>@string/swear_17</item>
+        <item>@string/swear_18</item>
+        <item>@string/swear_19</item>
+        <item>@string/swear_20</item>
+        <item>@string/swear_21</item>
+        <item>@string/swear_22</item>
+        <item>@string/swear_23</item>
+        <item>@string/swear_24</item>
+    </string-array>
+</resources>

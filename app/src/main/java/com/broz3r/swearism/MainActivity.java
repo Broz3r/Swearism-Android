@@ -12,20 +12,20 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.swear_view)
     protected SwearView swearView;
 
+    private SwearManager swearManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        swearManager = new SwearManager(this, swearView);
+        swearManager.changeSwear();
     }
 
     @OnClick(R.id.button)
     public void onButtonClicked() {
-        if (swearView.getSide() == Side.LEFT) {
-            swearView.setSide(Side.RIGHT);
-        }
-        else {
-            swearView.setSide(Side.LEFT);
-        }
+        swearManager.changeSwear();
     }
 }

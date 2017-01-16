@@ -8,20 +8,26 @@
         android:id="@+id/image_left"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="4"
-        android:background="#E57373"
-        android:visibility="gone"/>
+        android:layout_weight="3"/>
 
-    <TextView
+    <FrameLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="3"/>
+        android:layout_weight="3">
+
+        <TextView
+            android:id="@+id/text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+    </FrameLayout>
 
     <ImageView
         android:id="@+id/image_right"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="4"
-        android:background="#64B5F6"/>
+        android:layout_weight="3"/>
 
 </merge>

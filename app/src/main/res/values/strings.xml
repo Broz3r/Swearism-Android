@@ -2,6 +2,31 @@
     <string name="app_name">Swearism</string>
     <string name="app_subtitle">Swear like a communism!</string>
 
+    <string name="swear_1">Bureaucrate capitulard dégénéré</string>
+    <string name="swear_2">Centriste</string>
+    <string name="swear_3">Valet des trusts patronaux</string>
+    <string name="swear_4">Ennemi de la classe ouvrière</string>
+    <string name="swear_5">Suppôt de l\'impérialisme nord-américain</string>
+    <string name="swear_6">Vermine solférinienne opportuniste</string>
+    <string name="swear_7">Crypto-Stalinien purulent</string>
+    <string name="swear_8">Sponte-Décompo</string>
+    <string name="swear_9">Laquais de la presse bourgeoise</string>
+    <string name="swear_10">Apparatchik rampant</string>
+    <string name="swear_11">Parlementariste putride</string>
+    <string name="swear_12">Fossoyeur de la révolution</string>
+    <string name="swear_13">Anarchiste petit-bourgeois</string>
+    <string name="swear_14">Vérole du mouvement ouvrier</string>
+    <string name="swear_15">Bifteckard stalinien</string>
+    <string name="swear_16">Clown social-démocrate</string>
+    <string name="swear_17">Larbin serville du patronat</string>
+    <string name="swear_18">Fasciste</string>
+    <string name="swear_19">Agent provocateur du stalinisme</string>
+    <string name="swear_20">Rentier de gauche</string>
+    <string name="swear_21">Social-traitre</string>
+    <string name="swear_22">Arriviste jaune</string>
+    <string name="swear_23">Stal</string>
+    <string name="swear_24">Menchevik</string>
+
     <string name="button_another">Another</string>
 
 </resources>
