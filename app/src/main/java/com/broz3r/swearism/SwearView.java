@@ -1,6 +1,8 @@
 package com.broz3r.swearism;
 
+import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
+import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -14,6 +16,9 @@ import butterknife.ButterKnife;
  */
 
 public class SwearView extends LinearLayout {
+
+    private static final int ANIMATION_DURATION = 700;
+    private static final float TRANSLATION_VALUE = 40f;
 
     @BindView(R.id.image_left) protected ImageView imageLeft;
     @BindView(R.id.image_right) protected ImageView imageRight;
@@ -77,4 +82,53 @@ public class SwearView extends LinearLayout {
         setSwearImage(swearImage);
         setText(swear);
     }
+
+    //region - Animation
+
+    public void fadeOut(@Nullable AnimatorListenerAdapter animatorListenerAdapter) {
+        switch (side) {
+            case LEFT:
+                imageLeft.animate()
+                        .alpha(0f)
+                        .translationX(-TRANSLATION_VALUE)
+                        .setDuration(ANIMATION_DURATION);
+                break;
+            case RIGHT:
+                imageRight.animate()
+                        .alpha(0f)
+                        .translationX(TRANSLATION_VALUE)
+                        .setDuration(ANIMATION_DURATION);
+                break;
+        }
+
+        textView.animate()
+                .alpha(0f)
+                .setDuration(ANIMATION_DURATION)
+                .setListener(animatorListenerAdapter);
+    }
+
+    public void fadeIn(@Nullable AnimatorListenerAdapter animatorListenerAdapter) {
+        switch (side) {
+            case LEFT:
+                imageLeft.animate()
+                        .alpha(1f)
+                        .translationX(TRANSLATION_VALUE)
+                        .setDuration(ANIMATION_DURATION);
+                break;
+            case RIGHT:
+                imageRight.animate()
+                        .alpha(1f)
+                        .translationX(-TRANSLATION_VALUE)
+                        .setDuration(ANIMATION_DURATION);
+                break;
+        }
+
+        textView.animate()
+                .alpha(1f)
+                .setDuration(ANIMATION_DURATION)
+                .setListener(animatorListenerAdapter);
+    }
+
+
+    //endregion
 }

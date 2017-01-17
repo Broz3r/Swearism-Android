@@ -1,5 +1,7 @@
 package com.broz3r.swearism;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
@@ -18,9 +20,16 @@ public class SwearManager {
     }
 
     public void changeSwear() {
-        int swearRandomIndex = (int) (Math.random() * swears.length);
-        int imageRandomIndex = (int) (Math.random() * SwearImage.list.size());
+        final int swearRandomIndex = (int) (Math.random() * swears.length);
+        final int imageRandomIndex = (int) (Math.random() * SwearImage.list.size());
 
-        swearView.setSwear(SwearImage.list.get(imageRandomIndex), swears[swearRandomIndex]);
+        swearView.fadeOut(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                swearView.setSwear(SwearImage.list.get(imageRandomIndex), swears[swearRandomIndex]);
+                swearView.fadeIn(null);
+            }
+        });
     }
 }
