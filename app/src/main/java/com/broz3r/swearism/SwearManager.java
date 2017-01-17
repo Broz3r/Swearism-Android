@@ -16,8 +16,8 @@ public class SwearManager {
     private SwearView swearView;
     private String[] swears;
 
-    private int previousSwearIndex = 0;
-    private int previousImageIndex = 0;
+    private int swearIndex = 0;
+    private int imageIndex = 0;
 
     public SwearManager(@NonNull Context context, SwearView swearView) {
         this.swearView = swearView;
@@ -27,14 +27,14 @@ public class SwearManager {
     public void changeSwear() {
         if (changeIsEnable) {
             changeIsEnable = false;
-            previousSwearIndex = getNewRandomIndex(previousSwearIndex, swears.length);
-            previousImageIndex = getNewRandomIndex(previousImageIndex, SwearImage.list.size());
+            swearIndex = getNewRandomIndex(swearIndex, swears.length);
+            imageIndex = getNewRandomIndex(imageIndex, SwearImage.list.size());
 
             swearView.fadeOut(new AnimatorListenerAdapter() {
                 @Override
                 public void onAnimationEnd(Animator animation) {
                     super.onAnimationEnd(animation);
-                    swearView.setSwear(SwearImage.list.get(previousImageIndex), swears[previousSwearIndex]);
+                    swearView.setSwear(SwearImage.list.get(imageIndex), swears[swearIndex]);
                     swearView.fadeIn(new AnimatorListenerAdapter() {
                         @Override
                         public void onAnimationEnd(Animator animation) {
