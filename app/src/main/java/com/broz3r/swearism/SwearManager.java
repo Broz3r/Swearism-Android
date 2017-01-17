@@ -11,6 +11,8 @@ import android.support.annotation.NonNull;
 
 public class SwearManager {
 
+    private boolean changeIsEnable = true;
+
     private SwearView swearView;
     private String[] swears;
 
@@ -20,16 +22,25 @@ public class SwearManager {
     }
 
     public void changeSwear() {
-        final int swearRandomIndex = (int) (Math.random() * swears.length);
-        final int imageRandomIndex = (int) (Math.random() * SwearImage.list.size());
+        if (changeIsEnable) {
+            changeIsEnable = false;
+            final int swearRandomIndex = (int) (Math.random() * swears.length);
+            final int imageRandomIndex = (int) (Math.random() * SwearImage.list.size());
 
-        swearView.fadeOut(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                super.onAnimationEnd(animation);
-                swearView.setSwear(SwearImage.list.get(imageRandomIndex), swears[swearRandomIndex]);
-                swearView.fadeIn(null);
-            }
-        });
+            swearView.fadeOut(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    super.onAnimationEnd(animation);
+                    swearView.setSwear(SwearImage.list.get(imageRandomIndex), swears[swearRandomIndex]);
+                    swearView.fadeIn(new AnimatorListenerAdapter() {
+                        @Override
+                        public void onAnimationEnd(Animator animation) {
+                            super.onAnimationEnd(animation);
+                            changeIsEnable = true;
+                        }
+                    });
+                }
+            });
+        }
     }
 }
