@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:layout_margin="@dimen/spacing_large"
+            android:layout_margin="@dimen/spacing_very_large"
             android:padding="@dimen/spacing_large"
             android:textSize="@dimen/material_text_title"
             android:textAllCaps="true"
